@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlaneController;
+use App\Http\Controllers\FactoryController;
+use App\Http\Controllers\NationalController;
+use App\Http\Controllers\typePlaneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/planes', PlaneController::class);
+Route::resource('/factorys', FactoryController::class);
+Route::resource('/typeplanes', typePlaneController::class);
+Route::resource('/nationals', NationalController::class);
+Route::resource('/albums', AlbumController::class);
+Route::get('/search', PlaneController::class . '@search');
