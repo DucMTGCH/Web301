@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Factory;
+
 
 class FactoryController extends Controller
 {
@@ -11,9 +13,9 @@ class FactoryController extends Controller
      */
     public function index()
     {
-        $factorys = factory::all();
+        $factorys = Factory::all();
 
-        return view('factory.index', ['factorys' => $factorys]);
+        return view('factorys.index', ['factorys' => $factorys]);
     }
 
     /**
@@ -21,7 +23,7 @@ class FactoryController extends Controller
      */
     public function create()
     {
-        return view('factory.create');
+        return view('factorys.create');
     }
 
     /**
@@ -29,15 +31,15 @@ class FactoryController extends Controller
      */
     public function store(Request $request)
     {
-        $factory = new Artist();
-        $factory->name = $request->name;
-        $factory->nationality = $request->nationality;
-        $factory->email = $request->email;
-        $factory->phonenumber = $request->phonenumber;
+        $factory = new Factory();
+        $factory->name = $request->get('name');
+        $factory->nationality = $request->get('nationality');
+        $factory->email = $request->get('email');
+        $factory->phonenumber = $request->get('phonenumber');
         
-        $artist->save();
+        $factory->save();
 
-        return redirect('/artists');
+        return redirect('/factorys');
     }
 
     /**
@@ -47,7 +49,7 @@ class FactoryController extends Controller
     {
         $factory = Factory::find($id);
 
-        return view('factory.show', ['factory' => $factory]);
+        return view('factorys.show', ['factory' => $factory]);
     }
 
     /**
@@ -55,9 +57,9 @@ class FactoryController extends Controller
      */
     public function edit(string $id)
     {
-        $factory = factory::find($id);
+        $factory = Factory::find($id);
 
-        return view('factory.edit', ['factory' => $factory]);
+        return view('factorys.edit', ['factory' => $factory]);
     }
 
     /**
@@ -65,15 +67,15 @@ class FactoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $factory =  Artist::find($id);
-        $factory->name = $request->name;
-        $factory->phonenumber = $request->phonenumber;
-        $factory->nationality = $request->nationality;
-        $factory->email = $request->email;
+        $factory =  Factory::find($id);
+        $factory->name = $request->get('name');
+        $factory->phonenumber = $request->get('phonenumber');
+        $factory->nationality = $request->get('nationality');
+        $factory->email = $request->get('email');
 
-        $artist->save();
+        $factory->save();   
 
-        return redirect('/artists');
+        return redirect('/factorys');
     }
 
     /**
@@ -81,7 +83,7 @@ class FactoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $factory = factory::find($id);
+        $factory = Factory::find($id);
 
         $factory->delete();
 

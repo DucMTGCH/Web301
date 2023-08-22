@@ -25,5 +25,4 @@ Route::resource('/planes', PlaneController::class);
 Route::resource('/factorys', FactoryController::class);
 Route::resource('/typeplanes', typePlaneController::class);
 Route::resource('/nationals', NationalController::class);
-Route::resource('/albums', AlbumController::class);
 Route::get('/search', PlaneController::class . '@search');

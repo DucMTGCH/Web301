@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class typePlane extends Model
+class typeplane extends Model
 {
     use HasFactory;
     protected $table = 'typeplane';

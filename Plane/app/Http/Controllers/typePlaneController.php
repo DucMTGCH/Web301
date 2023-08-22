@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\typePlane;
+use App\Models\typeplane;
 
-class typePlaneController extends Controller
+class typeplaneController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $typePlanes = typePlane::all();
+        $typeplanes = typeplane::all();
 
-        return view('typePlane.index', ['typePlanes' => $typePlanes]);
+        return view('typeplane.index', ['typeplanes' => $typeplanes]);
     }
 
     /**
@@ -22,7 +22,7 @@ class typePlaneController extends Controller
      */
     public function create()
     {
-        return view('typePlane.create');
+        return view('typeplane.create');
     
     }
 
@@ -31,12 +31,12 @@ class typePlaneController extends Controller
      */
     public function store(Request $request)
     {
-        $typePlane = new typePlane();
-        $typePlane->name = $request->name;
+        $typeplane = new typeplane();
+        $typeplane->name = $request->name;
        
-        $typePlane->save();
+        $typeplane->save();
 
-        return redirect('/typePlanes');
+        return redirect('/typeplanes');
     }
 
     
@@ -46,9 +46,9 @@ class typePlaneController extends Controller
      */
     public function show(string $id)
     {
-        $typePlane = typePlane::find($id);
+        $typeplane = typeplane::find($id);
 
-        return view('typePlane.show', ['typePlane' => $typePlane]);
+        return view('typeplane.show', ['typeplane' => $typeplane]);
     }
 
     
@@ -58,9 +58,9 @@ class typePlaneController extends Controller
      */
     public function edit(string $id)
     {
-        $typePlane = typePlane::find($id);
+        $typeplane = typeplane::find($id);
 
-        return view('typePlane.edit', ['typePlane' => $typePlane]);
+        return view('typeplane.edit', ['typeplane' => $typeplane]);
     }
     
 
@@ -69,12 +69,12 @@ class typePlaneController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $typePlane =  typePlane::find($id);
-        $typePlane->name = $request->name;
+        $typeplane =  typeplane::find($id);
+        $typeplane->name = $request->name;
        
-        $typePlane->save();
+        $typeplane->save();
 
-        return redirect('/typePlanes');
+        return redirect('/typeplanes');
     
     }
 
@@ -83,11 +83,11 @@ class typePlaneController extends Controller
      */
     public function destroy(string $id)
     {
-        $typePlane = typePlane::find($id);
+        $typeplane = typeplane::find($id);
 
-        $typePlane->delete();
+        $typeplane->delete();
 
-        return redirect('/typePlanes');
+        return redirect('/typeplanes');
     }
 }
     

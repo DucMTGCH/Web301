@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Factory;
-use App\Models\typePlane;
+use App\Models\typeplane;
 use App\Models\Plane;
 use App\Models\National;
 
@@ -29,12 +29,12 @@ class PlaneController extends Controller
     public function create()
     {
         $Factorys = Factory::all();
-        $typePlanes = typePlane::all();
+        $typeplanes = typeplane::all();
        
         $nationals = National::all();
         return view('Plane.create',[
             'Factorys' => $Factorys,
-            'typePlanes' => $typePlanes,
+            'typeplanes' => $typeplanes,
             'nationals' => $nationals
         ]);
     }
@@ -47,7 +47,7 @@ class PlaneController extends Controller
     {
         $Planes = new Plane();
         $Planes->name = $request->name;
-        $Planes->typePlane_id = $request->typePlane;
+        $Planes->typeplane_id = $request->typeplane;
         $Planes->national_id = $request->national;
         $Planes->save();
         $Planes->Factorys()->attach($request->Factorys);
@@ -72,12 +72,12 @@ class PlaneController extends Controller
     {
         $Planes = Plane::find($id);
         $Factorys = Factory::all();
-        $typePlanes = TypePlane::all();
+        $typeplanes = TypePlane::all();
         $nationals = National::all();
         return view('Plane.edit', [
             'Plane' => $Planes,
             'Factorys' => $Factorys,
-            'typePlane' => $typePlanes,
+            'typeplane' => $typeplanes,
             'nationals' => $nationals
         ]);
     }
@@ -90,7 +90,7 @@ class PlaneController extends Controller
         $Planes =  Plane::find($id);
         $Planes->name = $request->name;
         $Planes->Factory()->sync($request->Factorys);
-        $Planes->TypePlane_id = $request->typePlane;
+        $Planes->TypePlane_id = $request->typeplane;
         $Planes->national_id = $request->national;
       
         $Planes->save();
