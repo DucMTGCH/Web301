@@ -1,4 +1,5 @@
-
+@extends('layout.footer')
+@section('content')
 <section class="home">
     <div class="text">Home</div>
         <ol style="margin-left: 5rem; margin-right:5rem" class="list-group list-group-numbered">
@@ -24,3 +25,4 @@
 </form>
 </ol>
 </section>
+@endsection
