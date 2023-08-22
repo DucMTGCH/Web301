@@ -95,7 +95,7 @@ class PlaneController extends Controller
       
         $Planes->save();
 
-        return redirect('/Planes')->with('status', 'Success');
+        return redirect('/planes')->with('status', 'Success');
     
     }
 
@@ -108,7 +108,7 @@ class PlaneController extends Controller
 
         $Planes->delete();
 
-        return redirect('/Planes');
+        return redirect('/planes');
     }
 }
 

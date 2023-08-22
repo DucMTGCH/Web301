@@ -43,6 +43,5 @@
                 </form>
             </ol>
             <div style="margin-top: 3rem">
-                @include('layout.footer')
             </div>
     </section>

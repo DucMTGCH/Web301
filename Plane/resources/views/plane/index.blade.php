@@ -1,4 +1,4 @@
-@extends('layout.layout')
+
 <section class="home">
  <div class="text">Home</div>
     @foreach ($planes as $planes)
@@ -24,6 +24,5 @@
        </ol>
        @endforeach
        <div style="margin-top: 3rem">
-         @include('layout.footer')
      </div>
      </section>
