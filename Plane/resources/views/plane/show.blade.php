@@ -1,3 +1,5 @@
+@extends('layout.layout')
+
 <section class="home">
         <div class="text">Home</div>
      
@@ -11,20 +13,17 @@
 
                     </div>
                     <div class="col" style="margin-top:5rem;">
-                        <h4 class="card-title">You are watching MV: {{$plane->name}}</h4>
-                        <p class="card-text">Artist: 
-                            @foreach($plane->factorys as $factory)
-                                {{$factory->name}}
-                            @endforeach
+                        <p class="card-text">Factory: 
                         </p>
-                        <p class="card-text">typeplane: {{$plane->typeplane->name}}</p>
-                        <p class="card-text">nationality:{{$plane->nationality->name}}</p>
+                        @foreach($Planes as $plane)
+                        <p class="card-text">typeplane: {{$plane->name}}</p>
+                        <p class="card-text">nationality:{{$plane->name}}</p>
                         <div style="text-align:center;margin-top:3rem">
                             <a class="btnbackhome" href="/planes" style="padding:4px 6px; border-radius:20px; border:2px solid black;text-decoration:none;color:black; ">
                             Back to home page</a>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>

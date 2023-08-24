@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class National extends Model
 {
     use HasFactory;
-    protected $table = 'nationalitys';
+    protected $table = 'nationals';
     protected $fillable = ['name'];
     public function Plane()
     {

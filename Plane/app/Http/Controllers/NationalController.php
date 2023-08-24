@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\National;
+
 
 class NationalController extends Controller
 {
@@ -11,9 +13,9 @@ class NationalController extends Controller
      */
     public function index()
     {
-        $nationalitys = National::all();
+        $nationals = National::all();
 
-        return view('nationality.index', ['nationalitys' => $nationalitys]);
+        return view('national.index', ['nationals' => $nationals]);
     
     }
 
@@ -22,7 +24,7 @@ class NationalController extends Controller
      */
     public function create()
     {
-        return view('nationality.create');
+        return view('national.create');
     
 
     }
@@ -32,13 +34,13 @@ class NationalController extends Controller
      */
     public function store(Request $request)
     {
-        $nationality = new National();
-        $nationality->name = $request->name;
+        $nationals = new National();
+        $nationals->name = $request->name;
 
 
-        $nationality->save();
+        $nationals->save();
 
-        return redirect('/nationalitys');
+        return redirect('/nationals');
     
 
     }
@@ -48,9 +50,9 @@ class NationalController extends Controller
      */
     public function show(string $id)
     {
-        $nationality = National::find($id);
+        $nationals = National::find($id);
 
-        return view('nationality.show', ['nationality' => $nationality]);
+        return view('national.show', ['nationals' => $nationals]);
     
     }
 
@@ -59,9 +61,9 @@ class NationalController extends Controller
      */
     public function edit(string $id)
     {
-        $nationality = National::find($id);
+        $nationals = National::find($id);
 
-        return view('nationality.edit', ['nationality' => $nationality]);
+        return view('national.edit', ['nationals' => $nationals]);
     }
 
     /**
@@ -69,13 +71,13 @@ class NationalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $nationality = National::find($id);
-        $nationality->name = $request->name;
+        $nationals = National::find($id);
+        $nationals->name = $request->name;
 
 
-        $nationality->save();
+        $nationals->save();
 
-        return redirect('/nationalitys');
+        return redirect('/nationals');
     }
 
     /**
@@ -83,10 +85,10 @@ class NationalController extends Controller
      */
     public function destroy(string $id)
     {
-        $nationality = National::find($id);
+        $nationals = National::find($id);
 
-        $nationality->delete();
+        $nationals->delete();
 
-        return redirect('/nationalitys');
+        return redirect('/nationals');
     }
 }

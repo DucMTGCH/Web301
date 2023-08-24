@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Factory;
-use App\Models\typeplanes;
+use App\Models\typePlane;
 use App\Models\Plane;
+use App\Models\Nationality;
 use App\Models\National;
-
 
 
 
@@ -18,9 +18,9 @@ class PlaneController extends Controller
      */
     public function index()
     {
-        $Planes = Plane::All();
+        $Planes = Plane::all();
        
-        return view('Plane.index', ['Planes' => $Planes]);
+        return view('plane.index', ['Planes' => $Planes]);
     }
 
     /**
@@ -29,13 +29,13 @@ class PlaneController extends Controller
     public function create()
     {
         $Factorys = Factory::all();
-        $typeplanes = typeplane::all();
+        $typePlanes = typePlane::all();
        
-        $nationals = National::all();
+        $national = National::all();
         return view('Plane.create',[
-            'Factorys' => $Factorys,
-            'typeplanes' => $typeplanes,
-            'nationals' => $nationals
+            'factorys' => $Factorys,
+            'typeplanes' => $typePlanes,
+            'nationalitys' => $national
         ]);
     }
     
@@ -47,12 +47,15 @@ class PlaneController extends Controller
     {
         $Planes = new Plane();
         $Planes->name = $request->name;
-        $Planes->typeplanes_id = $request->typeplanes;
-        $Planes->national_id = $request->national;
+        // $Planes->factory_id = $request->factory;
+        $Planes->typePlane_id = $request->typeplane;
+        $Planes->national_id = $request->nationality;
+        $Planes->description = $request->description;
+        $Planes->color = $request->color;
         $Planes->save();
-        $Planes->Factorys()->attach($request->Factorys);
+        $Planes->factory()->attach($request->factorys);
 
-        return redirect('/Planes')->with('status', 'Success');
+        return redirect('/planes')->with('status', 'Success');
     }
 
     /**
@@ -60,9 +63,9 @@ class PlaneController extends Controller
      */
     public function show(string $id)
     {
-        $Planes = planes::find($id);
+        $Planes = Plane::find($id);
 
-        return view('Plane.show', ['Plane' => $Planes]);
+        return view('plane.show', ['Planes' => $Planes]);
     }
 
     /**
@@ -72,13 +75,13 @@ class PlaneController extends Controller
     {
         $Planes = Plane::find($id);
         $Factorys = Factory::all();
-        $typeplanes = TypePlane::all();
-        $nationals = National::all();
+        $typePlanes = typePlane::all();
+        $nationalitys = National::all();
         return view('Plane.edit', [
             'Plane' => $Planes,
             'Factorys' => $Factorys,
-            'typeplanes' => $typeplanes,
-            'nationals' => $nationals
+            'typePlanes' => $typePlanes,
+            'nationalitys' => $nationalitys
         ]);
     }
 
@@ -91,10 +94,8 @@ class PlaneController extends Controller
         $Planes->name = $request->name;
         $Planes->Factory()->sync($request->Factorys);
         $Planes->TypePlane_id = $request->typeplanes;
-        $Planes->national_id = $request->national;
-      
+        $Planes->nationality_id = $request->nationality;
         $Planes->save();
-
         return redirect('/planes')->with('status', 'Success');
     
     }

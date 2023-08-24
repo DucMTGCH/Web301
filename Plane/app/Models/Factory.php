@@ -9,7 +9,7 @@ class Factory extends Model
 {
     use HasFactory;
     protected $table = 'factorys';
-    protected $fillable = ['name', 'email','phone number','nationality',];
+    protected $fillable = ['name', 'email','phonenumber','nationality',];
 
     public function Plane()
 {

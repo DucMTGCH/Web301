@@ -10,7 +10,7 @@ class Plane extends Model
     use HasFactory;
     protected $table = 'planes';
     protected $fillable = [
-        'name', 'factory_id', 'national_id', 'typePlane_id',
+        'name','factory_id', 'national_id', 'typePlane_id','description','color'
     ];
 
     public function Factory()

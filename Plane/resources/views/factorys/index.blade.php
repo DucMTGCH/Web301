@@ -1,4 +1,6 @@
+@extends('layout.navbar')
 
+@extends('layout.layout')
 <section class="home">
  <div class="text">Home</div>
      @foreach ($factorys as $factorys)
@@ -22,8 +24,10 @@
                      @csrf
                      <button type="submit" class="btn btn-secondary" onclick="return confirm('Are you sure?');">Delete</button>
                    </form>
+                  
            </span>
          </li>
        </ol>
+       @include('layout.footer')
        @endforeach
      </section>

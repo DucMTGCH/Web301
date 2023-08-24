@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\typeplanes;
+use App\Models\typePlane;
 
-class typeplanesController extends Controller
+class typePlaneController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $typeplanes = typeplanes::all();
+        $typeplanes = typePlane::all();
 
-        return view('typeplanes.index', ['typeplanes' => $typeplanes]);
+        return view('typeplane.index', ['typeplanes' => $typeplanes]);
     }
 
     /**
@@ -22,7 +22,7 @@ class typeplanesController extends Controller
      */
     public function create()
     {
-        return view('typeplanes.create');
+        return view('typeplane.create');
     
     }
 
@@ -31,12 +31,12 @@ class typeplanesController extends Controller
      */
     public function store(Request $request)
     {
-        $typeplanes = new typeplanes();
+        $typeplanes = new typePlane();
         $typeplanes->name = $request->name;
        
         $typeplanes->save();
 
-        return redirect('/typeplaness');
+        return redirect('/typeplanes');
     }
 
     
@@ -46,9 +46,9 @@ class typeplanesController extends Controller
      */
     public function show(string $id)
     {
-        $typeplanes = typeplanes::find($id);
+        $typeplanes = typePlane::find($id);
 
-        return view('typeplanes.show', ['typeplanes' => $typeplanes]);
+        return view('typeplane.show', ['typeplanes' => $typeplanes]);
     }
 
     
@@ -58,9 +58,9 @@ class typeplanesController extends Controller
      */
     public function edit(string $id)
     {
-        $typeplanes = typeplanes::find($id);
+        $typeplanes = typePlane::find($id);
 
-        return view('typeplanes.edit', ['typeplanes' => $typeplanes]);
+        return view('typeplane.edit', ['typeplanes' => $typeplanes]);
     }
     
 
@@ -69,7 +69,7 @@ class typeplanesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $typeplanes =  typeplanes::find($id);
+        $typeplanes =  typePlane::find($id);
         $typeplanes->name = $request->name;
        
         $typeplanes->save();
@@ -83,11 +83,11 @@ class typeplanesController extends Controller
      */
     public function destroy(string $id)
     {
-        $typeplanes = typeplanes::find($id);
+        $typeplanes = typePlane::find($id);
 
         $typeplanes->delete();
 
-        return redirect('/typeplaness');
+        return redirect('/typeplanes');
     }
 }
     

@@ -1,4 +1,9 @@
+@extends('layout.navbar')
+
+@extends('layout.layout')
+
 <section class="home">
+
         <div class="text">Home</div>
             <ol style="margin-left: 5rem; margin-right:5rem" class="list-group list-group-numbered">
                 <form action="/planes" method="post" enctype="multipart/form-data">
@@ -26,16 +31,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="typeplane" class="form-label" style="color: red">typeplane</label>
-                        <select id="typeplane" name="typeplane" class="form-select" aria-label="Select Author">
+                        <select id="typeplane" name="typeplane" class="form-select" aria-label="Select typeplane">
                             <option selected>Please choose one</option>
-                            @foreach($typeplans as $typeplane)
+                            @foreach($typeplanes as $typeplane)
                             <option value="{{$typeplane->id}}">{{$typeplane->name}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="nationality" class="form-label" style="color: red">National</label>
-                        <select id="nationality" name="nationality" class="form-select" aria-label="Select Author">
+                        <select id="nationality" name="nationality" class="form-select" aria-label="Select nationality">
                             <option selected>Please choose one</option>
                             @foreach($nationalitys as $nationality)
                             <option value="{{$nationality->id}}">{{$nationality->name}}</option>
@@ -47,3 +52,4 @@
                 </form>
             </ol>
             <div style="margin-top: 3rem">
+            @include('layout.footer')

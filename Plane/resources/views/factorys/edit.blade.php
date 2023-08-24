@@ -1,4 +1,6 @@
+@extends('layout.navbar')
 
+@extends('layout.layout')
 <section class="home">
     <div class="text">Home</div>
         <ol style="margin-left: 5rem; margin-right:5rem" class="list-group list-group-numbered">
@@ -25,6 +27,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+@include('layout.footer')
 </ol>
 </section>

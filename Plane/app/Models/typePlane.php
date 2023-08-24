@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class typeplane extends Model
 {
     use HasFactory;
-    protected $table = 'typeplane';
+    protected $table = 'typePlanes';
     protected $fillable = ['name'];
 
     public function Plane()

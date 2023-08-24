@@ -1,7 +1,10 @@
+@extends('layout.layout')
+
+
 <section class="home">
     <div class="text">Home</div>
         <ol style="margin-left: 3rem" class="list-group list-group-numbered">
-            <form action="/categories" method="post">
+            <form action="/typeplanes" method="post">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Type Plane Name</label>
@@ -12,5 +15,6 @@
 
 </ol>
 <div style="margin-top: 3rem">
+@include('layout.footer')
 </div>
 </section>

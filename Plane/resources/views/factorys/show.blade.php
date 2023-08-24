@@ -1,4 +1,7 @@
-  
+@extends('layout.footer')
+
+@extends('layout.navbar')
+
 <section class="home">
 <body>
   <section class="main">
@@ -15,17 +18,19 @@
         <h3>Email: {{$factory->email}}</h3>
       </div>
       <div class="info">
-        <h3>Nationality: {{$factory->nationality}}</h3>
+        <h3>PhoneNumber: {{$factory->PhoneNumber}}</h3>
       </div>
       <div class="info">
-        <h3>phone number: {{$factory->PhoneNumber}}</h3>
+        <h3>Nationality: {{$factory->Nationality}}</h3>
       </div>
     </div>
     <div class="buttons">
       <a href="#" class="btn">Message</a>
       <a href="#" class="btn">Follow</a>
+      @include('layout.footer')
     </div>
   </div>
+
 </section>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');

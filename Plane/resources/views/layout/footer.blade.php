@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Services</h3>
+                        <h3>Service</h3>
                         <ul>
                             <li><a href="#">Web design</a></li>
                             <li><a href="#">Development</a></li>
@@ -24,19 +24,19 @@
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>About</h3>
+                        <h3>Company</h3>
                         <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Legacy</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Careers</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Careers</h3>
+                        <h3>Support</h3>
                         <ul>
-                            <li><a href="#">Job openings</a></li>
-                            <li><a href="#">Employee success</a></li>
-                            <li><a href="#">Benefits</a></li>
+                            <li><a href="#">Support request</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Email</a></li>
                         </ul>
                     </div>
                     </div>

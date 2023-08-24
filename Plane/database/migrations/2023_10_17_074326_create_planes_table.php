@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('color');
-            $table->foreignId('typePlane_id')->constrained('type_planes');
+            $table->foreignId('typePlane_id')->constrained('typePlanes');
             $table->foreignId('national_id')->constrained('nationals');
             $table->timestamps();
         });

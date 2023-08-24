@@ -4,7 +4,7 @@
             <ol style="margin-left: 3rem" class="list-group list-group-numbered">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">{{$typeplane->name}}</h4>
+                        <h4 class="card-title">{{$typeplanes->name}}</h4>
                     </div>
                 </div>
     </ol>
