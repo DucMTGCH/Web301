@@ -30,20 +30,20 @@
                     
                     </div>
                     <div class="mb-3">
-                        <label for="typeplane" class="form-label" style="color: red">typeplane</label>
-                        <select id="typeplane" name="typeplane" class="form-select" aria-label="Select typeplane">
+                        <label for="type" class="form-label" style="color: red">type</label>
+                        <select id="type" name="type" class="form-select" aria-label="Select type">
                             <option selected>Please choose one</option>
-                            @foreach($typeplanes as $typeplane)
-                            <option value="{{$typeplane->id}}">{{$typeplane->name}}</option>
+                            @foreach($types as $type)
+                            <option value="{{$type->id}}">{{$type->name}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="nationality" class="form-label" style="color: red">National</label>
-                        <select id="nationality" name="nationality" class="form-select" aria-label="Select nationality">
+                        <label for="national" class="form-label" style="color: red">National</label>
+                        <select id="national" name="national" class="form-select" aria-label="Select national">
                             <option selected>Please choose one</option>
-                            @foreach($nationalitys as $nationality)
-                            <option value="{{$nationality->id}}">{{$nationality->name}}</option>
+                            @foreach($nationals as $national)
+                            <option value="{{$national->id}}">{{$national->name}}</option>
                             @endforeach
                         </select>
                     </div>

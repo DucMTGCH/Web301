@@ -26,27 +26,27 @@
                   </a>
               </li>
                 <li class="nav-link">
-                    <a href="/typeplanes">
-                      <i class='bx bx-typeplane-alt icon' ></i>
+                    <a href="/types">
+                      <i class='bx bx-type-alt icon' ></i>
                         <span class="text nav-text">Type Plane</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                  <a href="/typeplanes/create">
+                  <a href="/types/create">
                     <i class='bx bx-plus-circle icon' ></i>
                       <span class="text nav-text">New Type Plane</span>
                   </a>
               </li>
                 <li class="nav-link">
-                    <a href="/nationalitys">
+                    <a href="/nationals">
                       <i class='bx bx-flag icon' ></i>
-                        <span class="text nav-text">Nationalitys</span>
+                        <span class="text nav-text">Nationals</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                  <a href="/nationalitys/create">
+                  <a href="/nationals/create">
                     <i class='bx bx-plus-circle icon' ></i>
-                      <span class="text nav-text">New Nationality</span>
+                      <span class="text nav-text">New Nationals</span>
                   </a>
               </li>
                 

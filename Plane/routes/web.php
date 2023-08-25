@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\NationalController;
-use App\Http\Controllers\typePlaneController;
+use App\Http\Controllers\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +22,9 @@ Route::get('/', function () {
 });
 
 Route::resource('/planes', PlaneController::class);
+// Route::get('/planes/{id}', [PlaneController::class, 'show']);
 Route::resource('/factorys', FactoryController::class);
-Route::resource('/typeplanes', typePlaneController::class);
+Route::resource('/types', TypeController::class);
 Route::resource('/nationals', NationalController::class);
 
 

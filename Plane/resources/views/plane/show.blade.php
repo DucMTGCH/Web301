@@ -9,21 +9,34 @@
                 <div class="card-body">
                 <div class="row">
                     <div class="col">
-                        <video style="border-radius:10px" controls width="800" height="500" >
+            
 
                     </div>
                     <div class="col" style="margin-top:5rem;">
-                        <p class="card-text">Factory: 
+                        <p class="card-text">
+                    
                         </p>
-                        @foreach($Planes as $plane)
-                        <p class="card-text">typeplane: {{$plane->name}}</p>
-                        <p class="card-text">nationality:{{$plane->name}}</p>
+                        <div class="data">
+
+    </div>
+    <div class="row">
+      <div class="info">
+        @foreach($Plane->factories as $factory)
+        <h3>Factory: {{$factory->name}}</h3>
+        @endforeach
+      </div>
+      <div class="info">
+        <h3>type: {{$Plane->Type->name}}</h3>
+      </div>
+      <div class="info">
+        <h3>national: {{$Plane->National->name}}</h3>
+      </div>
+    </div>
                         <div style="text-align:center;margin-top:3rem">
                             <a class="btnbackhome" href="/planes" style="padding:4px 6px; border-radius:20px; border:2px solid black;text-decoration:none;color:black; ">
                             Back to home page</a>
                         </div>
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>

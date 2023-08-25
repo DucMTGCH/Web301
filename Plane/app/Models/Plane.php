@@ -10,10 +10,10 @@ class Plane extends Model
     use HasFactory;
     protected $table = 'planes';
     protected $fillable = [
-        'name','factory_id', 'national_id', 'typePlane_id','description','color'
+        'name', 'national_id', 'type_id','description','color'
     ];
 
-    public function Factory()
+    public function Factories()
     {
         return $this->belongsToMany(Factory::class);
     }
@@ -22,7 +22,7 @@ class Plane extends Model
         return $this->belongsTo(National::class);
     }
 
-    public function typePlane(){
-        return $this->belongsTo(typePlane::class);
+    public function Type(){
+        return $this->belongsTo(Type::class);
     }
 }
